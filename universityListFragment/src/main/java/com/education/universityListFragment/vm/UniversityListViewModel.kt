@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class UniversityListtViewModel @Inject constructor(private val countryUniversitiesUseCase: GetCountryUniversitiesUseCase) :
+class UniversityListViewModel @Inject constructor(private val countryUniversitiesUseCase: GetCountryUniversitiesUseCase) :
     ViewModel() {
     private var _universitiesListLiveData = MutableLiveData<List<University>>()
     val universitiesListLiveData: LiveData<List<University>> = _universitiesListLiveData

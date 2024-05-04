@@ -10,13 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.education.domain.model.remote.University
 import com.education.universityListFragment.databinding.FragmentUniversityListBinding
-import com.education.universityListFragment.vm.UniversityListtViewModel
+import com.education.universityListFragment.vm.UniversityListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class UniversityListFragment : Fragment() {
 
-    val viewModel by viewModels<UniversityListtViewModel>()
+    val viewModel by viewModels<UniversityListViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -24,7 +24,7 @@ class UniversityListFragment : Fragment() {
         val binding = FragmentUniversityListBinding.inflate(inflater)
         binding.also {
             it.lifecycleOwner = viewLifecycleOwner
-            it.universityListtViewModel = viewModel
+            it.universityListViewModel = viewModel
         }
 
         val recyclerView = binding.universityListRecycler
@@ -33,7 +33,6 @@ class UniversityListFragment : Fragment() {
         adapter.onUniversityClick { university ->
             viewModel.onUniversityClicked(university)
             navigateToDestinationFragment(university)
-//
         }
 
         return binding.root
@@ -43,7 +42,7 @@ class UniversityListFragment : Fragment() {
         val deepLinkUri =
             Uri.parse("universityapp://universitydetails?countryName=${university.country}&countryCode=${university.countryCode}&state=${university.state}&universityName=${university.name}")
                 .buildUpon()
-                .appendQueryParameter("country", university.country)
+//                .appendQueryParameter("country", university.country)
                 .build()
 
         requireActivity().startActivity(Intent(Intent.ACTION_VIEW, deepLinkUri))

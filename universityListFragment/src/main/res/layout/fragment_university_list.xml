@@ -5,15 +5,15 @@
     <data>
 
         <variable
-            name="universityListtViewModel"
-            type="com.education.universityListFragment.vm.UniversityListtViewModel" />
+            name="universityListViewModel"
+            type="com.education.universityListFragment.vm.UniversityListViewModel" />
     </data>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/universityList_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:addUniversitiesRecyclerItems="@{universityListtViewModel.universitiesListLiveData}"
+        app:addUniversitiesRecyclerItems="@{universityListViewModel.universitiesListLiveData}"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
