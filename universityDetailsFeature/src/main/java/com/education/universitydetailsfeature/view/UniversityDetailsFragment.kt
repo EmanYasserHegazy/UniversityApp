@@ -37,12 +37,16 @@ class UniversityDetailsFragment : Fragment() {
         val universityName = uri?.getQueryParameter("universityName")
         val university =
             University(
-                name = universityName,
-                state = state,
-                country = countryName,
+                name = universityName ?: "",
+                state = state ?: "",
+                country = countryName ?: "",
                 countryCode = countryCode ?: ""
             )
-
+        println("emaaaan${university.name}")
+        println("emaaaan${university.state}")
+        println("emaaaan${university.country}")
+        println("emaaaan${university.countryCode}")
+        println("emaaaan${university.state?.equals("null")}")
         viewModel.getUniversityFromList(university)
 
         binding.iconRefresh.setOnClickListener {
