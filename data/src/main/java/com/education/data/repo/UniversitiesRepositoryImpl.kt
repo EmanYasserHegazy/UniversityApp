@@ -26,7 +26,7 @@ class UniversitiesRepositoryImpl @Inject constructor(
         country: String, countryCode: String
     ): Flow<Resource<List<University>>> = flow {
         emit(Resource.Loading())
-        val universities = dao.getCountryUniversities(countryCode = countryCode)
+        val universities = dao.getCountryUniversities()
         universitiesData = entityToDtoMapper.mapList(universities)
         emit(Resource.Loading(universitiesData))
         try {
@@ -56,19 +56,8 @@ class UniversitiesRepositoryImpl @Inject constructor(
             )
         }
 
-        val universitiesData = dao.getCountryUniversities(countryCode)
+        val universitiesData = dao.getCountryUniversities()
         emit(Resource.Success(entityToDtoMapper.mapList(universitiesData)))
     }
 
-    override fun getUniversityDetails(
-        countryCode: String
-    ): Flow<Resource<University>> = flow {
-        emit(Resource.Loading())
-        val universityDetails: University? =
-            universitiesData.filter { it.countryCode === countryCode }[0]
-        universityDetails?.let {
-
-            emit(Resource.Success(universityDetails))
-        } ?: emit(Resource.Error(message = "error while getting the university details "))
-    }
 }

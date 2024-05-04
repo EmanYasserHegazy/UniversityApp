@@ -10,7 +10,7 @@ class UniversityEntityToDtoMapper @Inject constructor() : Mapper<UniversityEntit
         state = input.state,
         web_pages = input.webPages,
         country = input.country,
-        countryCode = input.countryCode
+        countryCode = input.countryCode ?:""
     )
 
     fun mapList(input: List<UniversityEntity>): List<University> {

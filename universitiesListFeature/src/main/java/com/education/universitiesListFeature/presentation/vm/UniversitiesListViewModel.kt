@@ -46,12 +46,12 @@ class UniversitiesListViewModel @Inject constructor(private val countryUniversit
 
                     is Resource.Error -> {
                         // TODO should show #Error screen
-                        println("ErrorEman${result.message}")
+                        println("Error${result.message}")
                     }
 
                     is Resource.Loading -> {
                         // TODO should show #LOADING screen
-                        println("loadingEman${result.message}")
+                        println("loading${result.message}")
                     }
                 }
             }.catch { print("") }.launchIn(this)

@@ -10,6 +10,6 @@ interface UniversityDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertUniversityList(universities: List<UniversityEntity>)
     
-    @Query("SELECT * FROM universityentity WHERE 'countryCode' LIKE '%' || :countryCode || '%'")
-    suspend fun getCountryUniversities(countryCode: String): List<UniversityEntity>
+    @Query("SELECT * FROM universityentity")
+    suspend fun getCountryUniversities(): List<UniversityEntity>
 }
