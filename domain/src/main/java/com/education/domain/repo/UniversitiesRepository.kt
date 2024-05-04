@@ -6,7 +6,7 @@ import com.education.domain.util.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface UniversitiesRepository {
-    fun getCountryUniversities(country: String, countryCode: String): Flow<Resource<Data>>
+    fun getCountryUniversities(country: String, countryCode: String): Flow<Resource<List<University>>>
     fun getUniversityDetails(
         countryCode: String
     ): Flow<Resource<University>>

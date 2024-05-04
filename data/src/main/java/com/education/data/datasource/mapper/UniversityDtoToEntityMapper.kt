@@ -16,11 +16,11 @@ class UniversityDtoToEntityMapper @Inject constructor(): Mapper<University, Univ
         )
     }
 
-    fun mapList(inputList: Data): List<UniversityEntity> {
+    fun mapList(inputList: List<University>?): List<UniversityEntity> {
 
         val outputList = mutableListOf<UniversityEntity>()
 
-        inputList.universities?.forEach { university ->
+        inputList?.forEach { university ->
             outputList.add(map(university))
         }
 
