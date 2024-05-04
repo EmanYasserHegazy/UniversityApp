@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="universityModel"
+            type="com.education.domain.model.remote.University" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp">
+        <!--        android:onClick="@{viewModel::onItemClicked}">-->
+
+        <TextView
+            android:id="@+id/countryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="10sp"
+            android:textStyle="bold"
+            android:text="@{universityModel != null ? universityModel.name : ``}"             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="University Name" />
+
+        <TextView
+            android:id="@+id/universityState"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@{universityModel != null ? universityModel.state : ``}"             app:layout_constraintStart_toStartOf="@+id/countryName"
+            app:layout_constraintTop_toBottomOf="@+id/countryName"
+            tools:text="University State" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/countryName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/countryName"
+            app:srcCompat="@color/material_dynamic_neutral0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

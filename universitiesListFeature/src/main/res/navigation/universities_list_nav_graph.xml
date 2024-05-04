@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/universities_list_nav_graph">
+<!--    app:startDestination="@layout/fragment_universities_list">-->
+    <fragment
+        android:id="@+id/UniversitiesListFragment"
+        android:name="com.education.universitiesListFeature.presentation.view.UniversitiesListFragment"
+        android:label="FragmentA"
+        tools:layout="@layout/fragment_universities_list">
+        <!--            <action-->
+        <!--                android:id="@+id/action_fragmentA_to_fragmentB"-->
+        <!--                app:destination="@id/fragmentB">-->
+        <!--                <argument-->
+        <!--                    android:name="arg1"-->
+        <!--                    app:argType="string" />-->
+        <!--                <argument-->
+        <!--                    android:name="arg2"-->
+        <!--                    app:argType="integer" />-->
+        <!--            </action>-->
+    </fragment>
+</navigation>

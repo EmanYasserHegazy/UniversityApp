@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/university_list_nav_graph">
+
+    <include app:graph="@navigation/university_list_nav_graph" />
+    <include app:graph="@navigation/university_details_nav_graph" />
+
+    <!--        <fragment-->
+<!--            android:id="@+id/universityListFragment"-->
+<!--            android:name="com.education.universityListFragment.view.UniversityListFragment"-->
+<!--            android:label="Universities List">-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_universityList_to_universityDetails"-->
+    <!--            app:destination="@id/universityDetailsFragment">-->
+    <!--            &lt;!&ndash; we can pass the model as whole by make it implment paraceable but i do this for time constraints to be faster&ndash;&gt;-->
+    <!--            <argument-->
+    <!--                android:name="countryName"-->
+    <!--                app:argType="string" />-->
+    <!--            <argument-->
+    <!--                android:name="countryCode"-->
+    <!--                app:argType="string" />-->
+
+    <!--            <argument-->
+    <!--                android:name="webPage"-->
+    <!--                app:argType="string" />-->
+
+    <!--            <argument-->
+    <!--                android:name="state"-->
+    <!--                app:argType="string" />-->
+    <!--        </action>-->
+<!--        </fragment>-->
+
+
+</navigation>
