@@ -17,8 +17,8 @@ import javax.inject.Inject
 @HiltViewModel
 class UniversityListViewModel @Inject constructor(private val countryUniversitiesUseCase: GetCountryUniversitiesUseCase) :
     ViewModel() {
-    private var _universitiesListLiveData = MutableLiveData<List<University>>()
-    val universitiesListLiveData: LiveData<List<University>> = _universitiesListLiveData
+    private var _universitiesListLiveData = MutableLiveData<List<University>?>()
+    val universitiesListLiveData: MutableLiveData<List<University>?> = _universitiesListLiveData
 
 
     private val _navigateToUniversityDetail = MutableLiveData<University>()
@@ -39,40 +39,7 @@ class UniversityListViewModel @Inject constructor(private val countryUniversitie
             countryUniversitiesUseCase.invoke(country, countryCode).onEach { result ->
                 when (result) {
                     is Resource.Success -> {
-                        _universitiesListLiveData.value = arrayListOf(
-                            University(
-                                name = "cairo Univer",
-                                state = "Cairo",
-                                web_pages = emptyList(),
-                                country = "Egypt",
-                                countryCode = "CA"
-                            ), University(
-                                name = "cairo Univer",
-                                state = "Cairo",
-                                web_pages = emptyList(),
-                                country = "Egypt",
-                                countryCode = "CA"
-                            ), University(
-                                name = "cairo Univer",
-                                state = "Cairo",
-                                web_pages = emptyList(),
-                                country = "Egypt",
-                                countryCode = "CA"
-                            ), University(
-                                name = "cairo Univer",
-                                state = "Cairo",
-                                web_pages = emptyList(),
-                                country = "Egypt",
-                                countryCode = "CA"
-                            ), University(
-                                name = "cairo Univer",
-                                state = "Cairo",
-                                web_pages = emptyList(),
-                                country = "Egypt",
-                                countryCode = "CA"
-                            )
-                        )//result.data?.universities
-                        // isLoading=false
+                        _universitiesListLiveData.value = result?.data
                     }
 
                     is Resource.Error -> {
