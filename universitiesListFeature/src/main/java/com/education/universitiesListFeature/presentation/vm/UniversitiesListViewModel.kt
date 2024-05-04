@@ -41,44 +41,7 @@ class UniversitiesListViewModel @Inject constructor(private val countryUniversit
             countryUniversitiesUseCase.invoke(country, countryCode).onEach { result ->
                 when (result) {
                     is Resource.Success -> {
-                        _universitiesListLiveData.value = arrayListOf(
-                            University(
-                                name = "cairo Univer",
-                                state = "Cairo",
-                                web_pages = emptyList(),
-                                country = "Egypt",
-                                countryCode = "CA"
-                            ),
-                            University(
-                                name = "cairo Univer",
-                                state = "Cairo",
-                                web_pages = emptyList(),
-                                country = "Egypt",
-                                countryCode = "CA"
-                            ),
-                            University(
-                                name = "cairo Univer",
-                                state = "Cairo",
-                                web_pages = emptyList(),
-                                country = "Egypt",
-                                countryCode = "CA"
-                            ),
-                            University(
-                                name = "cairo Univer",
-                                state = "Cairo",
-                                web_pages = emptyList(),
-                                country = "Egypt",
-                                countryCode = "CA"
-                            ),
-                            University(
-                                name = "cairo Univer",
-                                state = "Cairo",
-                                web_pages = emptyList(),
-                                country = "Egypt",
-                                countryCode = "CA"
-                            )
-                        )//result.data?.universities
-                        // isLoading=false
+                        _universitiesListLiveData.value = result.universities
                     }
 
                     is Resource.Error -> {
